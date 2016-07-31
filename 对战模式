@@ -1,0 +1,90 @@
+#include<stdio.h>
+#include<time.h>
+#include<stdlib.h>
+void main()
+{
+	char r,dn;
+    int s,q;
+    double p,y,n,f,z;
+    p=0;
+    y=0;
+    n=0;
+    printf("请输入您的选择(石头为c,剪刀为j,布为b,计算您的得分输入f):");
+    srand(time(0));
+    do{
+    	do{
+   		s=rand()%3;
+   		switch(s)
+   		{
+   			case0:dn='c';break;
+   			case1:dn='j';break;
+   			case2:dn='b';break;
+        }
+		do{
+		scanf("%c",&r);
+		}while(r!='c'&&r!='b'&&r!='j'&&r!='f');
+		if(r='f')
+		{
+			z=y+n+p;
+			f=100/z*(p/2.0+y);
+			printf("一共比赛了%g场,赢了%g场,输了%g场,平局%g场\n",z,y,n,p);
+			y=100/z*y;
+			n=100/z*n;
+			p=100/z*p;
+			printf("您的胜率为%.3g%%,您的败率为%.3g%%,您的平局率为%.3g%%,您的综合分数为%.3g,对您的成绩的评语:",y,n,p,f);
+			if(f<=20)
+			printf("您的运气差到无法想象的程度!\n\n");
+			if(f>20&&f<=40)
+			printf("您的运气差了点,加油\n\n");
+			if(f>40&&f<=60)
+			printf("您的运气还可以\n\n");
+			if(f>60&&f<=80)
+			printf("您的运气不错哟\n\n");
+			if(f>80&&f<=100)
+			printf("您的运气好到爆了\n\n");
+			printf("按任意键退出\n\n");
+			scanf("%d",&q);
+		}
+		if(dn==r)
+		{
+			printf("平局\n");
+			p++;
+		}
+		else
+		switch(dn)
+		{
+			case'c':if(r=='j')
+			{
+				printf("电脑赢了\n");
+				n++;
+			}
+			else
+			{
+				printf("您赢了\n");
+				y++;
+			}break;
+			case'j':if(r=='b')
+			{
+				printf("电脑赢了\n");
+				n++;
+			}
+			else
+			{
+				printf("您赢了\n");
+				y++;
+			}break;
+			case'b':if(r=='c')
+			{
+				printf("电脑赢了\n");
+				n++;
+			}
+			else
+			{
+				printf("您赢了\n");
+				y++;
+			}break;
+		}
+    	}while(r==dn);
+        }while)(r=='j'||r=='b'||r=='c');
+}
+ 
